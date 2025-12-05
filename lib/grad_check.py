@@ -65,7 +65,7 @@ def check_gradients(network, X, Y, epsilon=1e-7):
         status_W = "OK" if max_diff_W < 1e-6 else "FAIL"
         print(f" W{i+1}   | {layer.weights.shape} | {max_diff_W:.8f} | {status_W}")
         
-        # --- Check Biases (B) ---
+        # Check Biases (B) 
         analytic_grad_B = layer.bias_gradient
         
         # Numerical Gradient calculation for Biases
