@@ -1,0 +1,7 @@
+This repository will host our implementation of a neural network library from scratch using only Python and NumPy. The project will later include:
+
+A modular NN library (layers, activations, loss functions, optimizer, model class).
+A demo solving the XOR problem using our custom library.
+An autoencoder for MNIST image reconstruction.
+Using the trained encoder as a feature extractor for SVM classification.
+A comparison against TensorFlow/Keras implementations.
