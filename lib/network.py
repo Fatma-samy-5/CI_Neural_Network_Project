@@ -35,7 +35,7 @@ class Network:
 
         self.backward(gradient)
         
-        # التعديل: استدعاء دالة update في المُحسّن
+        
         self.optimizer.update(self) 
         
         return loss

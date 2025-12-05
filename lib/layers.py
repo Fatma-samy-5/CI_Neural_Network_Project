@@ -17,12 +17,11 @@ class Dense(Layer):
         self.input_size = input_size
         self.output_size = output_size
 
-        # التعديل الحاسم: تهيئة Xavier/Glorot لتكسير التماثل
-        # هذا يضمن أن تبدأ الأوزان بقيم عشوائية مناسبة لدوال Tanh/Sigmoid
+        # Tanh/Sigmoid
         limit = np.sqrt(2 / (input_size + output_size))
         self.weights = np.random.uniform(-limit, limit, (input_size, output_size))
         
-        # تهيئة التحيز (Bias) بصفر (هذا صحيح)
+
         self.bias = np.zeros((1, output_size))
 
         self.weights_gradient = None
@@ -34,7 +33,7 @@ class Dense(Layer):
         return self.output
 
     def backward(self, output_gradient):
-        # هذا الجزء صحيح وقد تأكدنا منه في فحص التدرج
+       
         self.weights_gradient = np.dot(self.input.T, output_gradient)
         self.bias_gradient = np.sum(output_gradient, axis=0, keepdims=True)
 
